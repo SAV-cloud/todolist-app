@@ -1,22 +1,17 @@
-import logo from './logo.svg';
+import ListComponent from './components/ListComponent'
 import './App.css';
+import MyClassComponent from './components/MyClassComponent';
+import { useState } from 'react';
 
 function App() {
+  const[isShowTimer, setIsShowTimer] = useState(false);
+
   return (
+
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {isShowTimer ?<MyClassComponent></MyClassComponent> : <ListComponent/>}
+        <button onClick={() => setIsShowTimer((prev) => !prev)}>Show timer</button>
       </header>
     </div>
   );

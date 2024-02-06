@@ -1,0 +1,22 @@
+.list-item {
+    &:before {
+        margin-left: -20px;
+        margin-right: 10px;
+        content: '\1F44E';
+    }
+
+    &.ok {
+        text-decoration: line-through;
+    }
+    
+    &.ok:before {
+        display: inline-block; 
+        text-decoration: none;
+        content: '\1F44D';  
+    }
+
+    &:not(:last-child) { 
+        margin-bottom: 3px;  
+     }
+}
+

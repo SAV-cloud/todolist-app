@@ -1,0 +1,92 @@
+
+$input-container-margin: 20px 3%;
+$input-container-padding: 5px;
+input {
+    outline: none;
+}
+
+// @counter-style thumbs {
+//   system: cyclic;
+//   symbols: "\1F44D";
+//   suffix: " ";
+// }
+
+ul {
+  list-style: none;
+}
+
+.input-container {
+  float: left;
+  margin: $input-container-margin;
+  position: relative;
+
+
+
+  .input-field {
+    border: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+    padding-left: $input-container-padding;
+    padding-right: $input-container-padding;
+
+    &::placeholder {
+        text-align: center;
+    }
+
+    &:focus ~ .focus-border {
+      width: 100%;
+      transition: 0.4s;
+      left: 0;
+    }
+  }
+
+  .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #27ae60;
+    transition: 0.4s;
+  }
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+
+  &:not(:last-child) { 
+    margin-bottom: 5px;  
+ }
+
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svgLoader {
+  animation: spin 0.5s linear infinite;
+  margin: auto;
+}
+.divLoader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.warning {
+  color: red;
+  margin: 0;
+  font-size: 12px;
+  position: absolute;
+}
